@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #post "/login", to: "auth#login" 
   resources :subjects, only: [:index, :create]
   resources :sessions, only: [:index, :create]
   resources :users, only: [:index, :create]
