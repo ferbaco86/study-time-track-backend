@@ -6,7 +6,7 @@ class SubjectsController < ApplicationController
   
   
   def create
-    @subject = Session.create(subject_params)
+    @subject = Subject.create(subject_params)
     render json: @subject
   end
 

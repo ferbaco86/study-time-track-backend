@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_07_025719) do
+ActiveRecord::Schema.define(version: 2021_03_08_172410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2021_03_07_025719) do
   create_table "sessions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title"
-    t.time "total_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_sessions_on_user_id"
@@ -27,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_03_07_025719) do
   create_table "subjects", force: :cascade do |t|
     t.bigint "session_id", null: false
     t.string "name"
-    t.time "time"
+    t.string "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["session_id"], name: "index_subjects_on_session_id"
