@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   before_action :require_login
-  def encode_token
+  def encode_token(payload)
     JWT.encode(payload, 'secret')
   end
 
@@ -23,9 +23,7 @@ class ApplicationController < ActionController::API
     decoded_hash = decoded_token
     unless decoded_hash.empty?
       user_id = decoded_hash[0]['user_id']
-      @user = User.find(id: user_id)
-    else
-      nil
+      @user = User.find_by(id: user_id)
     end
   end
 
@@ -34,6 +32,6 @@ class ApplicationController < ActionController::API
   end
 
   def require_login
-    render json: {message: 'Loggin in is required'}, status: :unauthorized unless logged_in?
+    render json: { message: 'Loggin in is required' }, status: :unauthorized unless logged_in?
   end
 end
