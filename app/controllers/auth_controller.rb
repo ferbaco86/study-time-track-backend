@@ -18,4 +18,8 @@ class AuthController < ApplicationController
       render json: {errors: 'No user logged in'}
     end
   end
+
+  def user_is_authed
+    render json: {message: "You have access"}
+  end
 end
