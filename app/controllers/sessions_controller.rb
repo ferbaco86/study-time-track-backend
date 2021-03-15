@@ -5,11 +5,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session = Session.create(session_params)
+    session = session_user.sessions.build(session_params)
+    if session.valid?
+      session.save
+    end
     render json: session
   end
 
   def session_params
-    params.require(:session).permit(:title, :total_time)
+    params.require(:session).permit(:title)
   end
 end
