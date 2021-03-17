@@ -19,7 +19,7 @@ class ApplicationController < ActionController::API
     end
   end
 
-  def session_user
+  def logged_user
     decoded_hash = decoded_token
     unless decoded_hash.empty?
       user_id = decoded_hash[0]['user_id']
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::API
   end
 
   def logged_in?
-    !!session_user
+    !!logged_user
   end
 
   def require_login

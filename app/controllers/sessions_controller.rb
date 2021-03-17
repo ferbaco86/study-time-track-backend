@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session = session_user.sessions.build(session_params)
+    session = logged_user.sessions.build(session_params)
     if session.valid?
       session.save
     end
