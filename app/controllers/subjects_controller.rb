@@ -5,7 +5,10 @@ class SubjectsController < ApplicationController
   end
 
   def create
-    subject = Subject.create(subject_params)
+    subject = Session.find(params[:id]).subjects.build(subject_params)
+    if subject.valid?
+      subject.save
+    end
     render json: subject
   end
 
