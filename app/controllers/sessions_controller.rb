@@ -12,7 +12,18 @@ class SessionsController < ApplicationController
     render json: session
   end
 
+  def show
+    session = obtain_session
+    render json: session
+  end
+
+  private
+
   def session_params
     params.require(:session).permit(:title)
+  end
+
+  def obtain_session
+    Session.find(params[:id])
   end
 end
