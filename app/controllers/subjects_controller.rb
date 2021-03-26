@@ -12,6 +12,11 @@ class SubjectsController < ApplicationController
     render json: subject
   end
 
+  def total_time
+    total = Session.find(params[:id]).subjects.pluck(:time).sum(&:to_f)
+    render json: total
+  end
+
   def subject_params
     params.require(:subject).permit(:name, :time)
   end
