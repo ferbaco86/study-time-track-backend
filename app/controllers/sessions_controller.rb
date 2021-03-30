@@ -6,14 +6,17 @@ class SessionsController < ApplicationController
 
   def create
     session = logged_user.sessions.build(session_params)
-    if session.valid?
-      session.save
-    end
+    session.save if session.valid?
     render json: session
   end
 
   def show
     session = obtain_session
+    render json: session
+  end
+
+  def longest
+    session = Session.longest_session
     render json: session
   end
 
