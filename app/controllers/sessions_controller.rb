@@ -16,8 +16,16 @@ class SessionsController < ApplicationController
   end
 
   def longest
-    session = Session.longest_session
-    render json: session
+    @session = Session.joins(:subjects)
+    .where("user_id=#{(params[:id])}")
+    .select('sessions.*,SUM(CAST((subjects.time) AS FLOAT)) AS total_time')
+    .group('sessions.id')
+    .order('total_time DESC').first
+    if @session.valid? 
+      @total_time = @session.total_time
+    end
+      
+    render json: @session, total_time: @total_time
   end
 
   private
