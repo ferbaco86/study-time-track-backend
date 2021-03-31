@@ -10,9 +10,9 @@ class SubjectsController < ApplicationController
     render json: subject
   end
 
-  def total_time
-    total = Session.find(params[:id]).subjects.pluck(:time).sum(&:to_f)
-    render json: total
+  def top
+    top5 = Subject.top_5_studied(params[:id])
+    render json: top5
   end
 
   def subject_params
