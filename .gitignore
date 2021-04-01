@@ -8,7 +8,6 @@
 /.bundle
 
 node_modules/
-Gemfile.lock
 
 # Ignore all logfiles and tempfiles.
 /log/*
