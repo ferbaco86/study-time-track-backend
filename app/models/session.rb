@@ -8,4 +8,6 @@ class Session < ApplicationRecord
                                   .select('sessions.*,SUM(subjects.time) AS total_time')
                                   .group('sessions.id')
                               }
+
+  validates :title, presence: true
 end

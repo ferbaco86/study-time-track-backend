@@ -6,5 +6,8 @@ class Subject < ApplicationRecord
                             .group('subjects.id')
                             .order('time DESC NULLS LAST')
                             .first(5)
-                        } 
+                        }
+
+  validates :name, presence: true
+  validates :time, presence: true
 end

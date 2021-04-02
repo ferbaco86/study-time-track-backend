@@ -1,9 +1,4 @@
 class SubjectsController < ApplicationController
-  def index
-    subjects = Subject.all
-    render json: subjects
-  end
-
   def create
     subject = Session.find(params[:id]).subjects.build(subject_params)
     subject.save if subject.valid?

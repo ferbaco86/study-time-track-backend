@@ -1,9 +1,4 @@
 class SessionsController < ApplicationController
-  def index
-    sessions = Session.all
-    render json: sessions
-  end
-
   def create
     session = logged_user.sessions.build(session_params)
     session.save if session.valid?
