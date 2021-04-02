@@ -6,7 +6,7 @@ module RequestSpecHelper
   def encode_token(payload)
     token = JWT.encode(payload, 'secret')
     {
-        'Authorization': "Bearer #{token}"
+      'Authorization': "Bearer #{token}"
     }
   end
- end
+end

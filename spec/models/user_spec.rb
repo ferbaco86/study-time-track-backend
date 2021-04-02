@@ -6,4 +6,4 @@ RSpec.describe User, type: :model do
   it { should have_secure_password }
   # Validation tests
   it { should validate_presence_of(:username) }
- end
+end
