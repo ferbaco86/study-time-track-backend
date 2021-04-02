@@ -7,7 +7,6 @@ RSpec.describe 'Auth', type: :request do
     context 'when the request is valid' do
       before { post '/login', params: {username: test_user.username, password: test_user.password} }
       it 'logins a user' do
-        puts json
         expect(json['user']['username']).to eq('test')
       end
       it 'returns status code 200' do

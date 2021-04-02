@@ -1,6 +1,6 @@
  FactoryBot.define do
   factory :session do
-    title { Faker::Session.title }
+    title { Faker::ProgrammingLanguage.name }
     user { create(:user) }
   end
  end
