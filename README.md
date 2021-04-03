@@ -2,7 +2,7 @@
 
 # Study-Time-Track-App: Backend
 
-> Study Time Track App Backend is the back-end API, which provides data to the [Study-Time-Track-Frontend](https://github.com/ferbaco86/study-time-track-frontend) which is an app that allows the user to register the time he/she spends on a given task. 
+> Study Time Track App Backend is a back-end API, which provides data to the [Study-Time-Track-Frontend](https://github.com/ferbaco86/study-time-track-frontend) which is an app that allows the user to register the time he/she spends on a given task. 
 
 
 ## Main Features
@@ -29,7 +29,7 @@
 
 ## Live Demo
 
-[Study-Time-Track-App: Live version](fbc-study-track.herokuapp.com/)
+[Study-Time-Track-App: Live version](https://fbc-study-track.herokuapp.com/)
 Hosted on a Heroku free account, it may take a while to load. 
 
 ## Getting Started
@@ -38,7 +38,7 @@ To get a local copy up and running follow these simple steps.
 
 Clone the repo with:
 
-````
+```
 https://github.com/ferbaco86/study-time-track-backend.git
 ```
 
