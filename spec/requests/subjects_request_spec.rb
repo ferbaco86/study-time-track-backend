@@ -27,7 +27,6 @@ RSpec.describe 'Subjects', type: :request do
                         headers: encode_token({ user_id: user_id })
     end
     it 'returns created session' do
-      pp json
       expect(json).not_to be_empty
       expect(json['name']).to eq('Go')
     end
